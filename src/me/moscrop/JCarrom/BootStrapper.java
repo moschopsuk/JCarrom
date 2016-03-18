@@ -14,7 +14,8 @@ public class BootStrapper {
 			g.init();
 			g.run();
 			
-			new Thread(g).start();			
+			new Thread(g).start();	
+			
 		} catch(Exception ex) {			
 			ex.printStackTrace();			
 		}

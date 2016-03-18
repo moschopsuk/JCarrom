@@ -40,10 +40,13 @@ public class Camera {
     
 	public void setRotation(float yaw, float pitch)
     {
-        //increment the yaw and pitch
-        this.yaw += (yaw * MOUSESENSITIVTY);
-        this.pitch -= (pitch * MOUSESENSITIVTY);
+        this.yaw = yaw;
+        this.pitch = pitch;
     }
+		
+	public void setPosition(Vector3f position) {
+		this.position = position;
+	}
      
     /**
      * moves the camera forward relative 
@@ -120,7 +123,7 @@ public class Camera {
         //translate to the position vector's location
         GL11.glTranslatef(this.position.x, this.position.y, this.position.z);
     }
-    
+        
     @Override
     public String toString() {
     	return String.format("X:%s Y:%s Z:%s Yaw:%.2f Pitch:%.2f", this.position.x, this.position.y, this.position.z, this.yaw, this.pitch);
